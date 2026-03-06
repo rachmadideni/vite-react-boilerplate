@@ -1,0 +1,19 @@
+/*
+ * {{pascalCase name}} Messages
+ *
+ * This contains all the text for the {{pascalCase name}} feature.
+ */
+import { defineMessages } from 'react-intl'
+
+export const scope = 'app.features.{{camelCase name}}'
+
+export default defineMessages({
+  header: {
+    id: `${scope}.header`,
+    defaultMessage: '{{pascalCase name}}',
+  },
+  description: {
+    id: `${scope}.description`,
+    defaultMessage: 'This is the {{pascalCase name}} feature',
+  },
+})
