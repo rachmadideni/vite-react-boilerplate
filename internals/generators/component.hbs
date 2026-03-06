@@ -1,0 +1,13 @@
+import { cn } from '@utils/index'
+
+interface {{pascalCase name}}Props {
+  className?: string
+}
+
+export function {{pascalCase name}}({ className }: {{pascalCase name}}Props) {
+  return (
+    <div className={cn('', className)}>
+      <p>{{pascalCase name}} Component</p>
+    </div>
+  )
+}

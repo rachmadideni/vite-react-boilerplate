@@ -1,0 +1,13 @@
+import { useQuery } from '@tanstack/react-query'
+
+export function use{{pascalCase name}}() {
+  const { data, isLoading, error } = useQuery({
+    queryKey: ['{{camelCase name}}'],
+    queryFn: async () => {
+      // Add your API call here
+      return {}
+    },
+  })
+
+  return { data, isLoading, error }
+}

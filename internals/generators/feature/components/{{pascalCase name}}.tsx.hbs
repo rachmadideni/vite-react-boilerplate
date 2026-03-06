@@ -1,0 +1,13 @@
+import { use{{pascalCase name}} } from '../hooks/use{{pascalCase name}}'
+import type { {{pascalCase name}}Props } from '../types'
+
+export function {{pascalCase name}}({ className }: {{pascalCase name}}Props) {
+  const { data } = use{{pascalCase name}}()
+
+  return (
+    <div className={className}>
+      <h2 className="text-2xl font-bold">{{pascalCase name}}</h2>
+      <p>Feature component for {{pascalCase name}}</p>
+    </div>
+  )
+}
