@@ -1,8 +1,30 @@
 {
   "name": "vite-react-boilerplate",
   "private": true,
-  "version": "1.0.0",
+  "version": "0.1.0",
   "type": "module",
+  "description": "A modern React boilerplate with Vite, TypeScript, TanStack Query, Zustand, and Tailwind CSS",
+  "keywords": [
+    "vite",
+    "react",
+    "typescript",
+    "boilerplate",
+    "tailwindcss",
+    "tanstack-query",
+    "zustand",
+    "react-router",
+    "react-intl"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR_USERNAME/vite-react-boilerplate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/YOUR_USERNAME/vite-react-boilerplate/issues"
+  },
+  "homepage": "https://github.com/YOUR_USERNAME/vite-react-boilerplate#readme",
+  "license": "MIT",
+  "author": "Your Name <your.email@example.com>",
   "scripts": {
     "setup": "node internals/scripts/setup.js",
     "clean": "node internals/scripts/clean.js",
@@ -22,7 +44,14 @@
     "generate:page": "plop page",
     "generate:hook": "plop hook",
     "generate:store": "plop store",
-    "generate:feature": "plop feature"
+    "generate:feature": "plop feature",
+    "release": "standard-version",
+    "release:minor": "standard-version --release-as minor",
+    "release:major": "standard-version --release-as major",
+    "release:patch": "standard-version --release-as patch",
+    "release:first": "standard-version --first-release",
+    "release:dry": "standard-version --dry-run"
+  },
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.0.5",
@@ -67,6 +96,7 @@
     "jsdom": "^24.0.0",
     "plop": "^4.0.5",
     "prettier": "^3.2.4",
+    "standard-version": "^9.5.0",
     "tailwindcss": "^4.0.0",
     "typescript": "^5.3.3",
     "vite": "^5.0.12",
