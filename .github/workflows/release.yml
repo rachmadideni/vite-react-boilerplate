@@ -62,6 +62,7 @@ jobs:
           draft: false
           prerelease: false
           generate_release_notes: true
+          target_commitish: dev
           files: |
             dist/**/*
         env:
