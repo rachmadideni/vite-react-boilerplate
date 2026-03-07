@@ -7,7 +7,7 @@ This guide explains how to use this boilerplate as a starting point for your pro
 ### Step 1: Clone the Repository
 
 ```bash
-git clone --depth=1 https://github.com/YOUR_USERNAME/vite-react-boilerplate.git my-project
+git clone --depth=1 https://github.com/YOUR_USERNAME/viteamin.git my-project
 cd my-project
 ```
 

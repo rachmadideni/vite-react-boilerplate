@@ -1,6 +1,6 @@
-# ⚡ Vite React Boilerplate
+# ⚡ Viteamin 
 
-A production-ready, highly scalable React boilerplate with the best developer experience and a focus on performance and best practices.
+Viteamin (pronounced: veet-uh-min) is a production-ready React boilerplate, highly scalable React boilerplate with the best developer experience and a focus on performance and best practices.
 
 Start your next React project in seconds with a modern stack, powerful CLI generators, and best-in-class tooling.
 
@@ -27,7 +27,7 @@ Start your next React project in seconds with a modern stack, powerful CLI gener
 1. Make sure you have **Node.js v18+** and **npm v8+** installed
 2. Clone this repo:
    ```bash
-   git clone --depth=1 https://github.com/YOUR_USERNAME/vite-react-boilerplate.git <YOUR_PROJECT_NAME>
+   git clone --depth=1 https://github.com/rachmadideni/viteamin.git <YOUR_PROJECT_NAME>
    ```
 3. Move to the directory:
    ```bash
