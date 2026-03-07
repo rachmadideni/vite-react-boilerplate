@@ -1,5 +1,5 @@
 {
-  "name": "vite-react-boilerplate",
+  "name": "viteamin",
   "private": true,
   "version": "0.1.1",
   "type": "module",
@@ -17,14 +17,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/YOUR_USERNAME/vite-react-boilerplate.git"
+    "url": "https://github.com/rachmadideni/viteamin.git"
   },
   "bugs": {
-    "url": "https://github.com/YOUR_USERNAME/vite-react-boilerplate/issues"
+    "url": "https://github.com/rachmadideni/viteamin/issues"
   },
-  "homepage": "https://github.com/YOUR_USERNAME/vite-react-boilerplate#readme",
+  "homepage": "https://github.com/rachmadideni/viteamin#readme",
   "license": "MIT",
-  "author": "Your Name <your.email@example.com>",
+  "author": "Denny Rachmadi <rachmadideni@gmail.com>",
   "scripts": {
     "setup": "node internals/scripts/setup.js",
     "clean": "node internals/scripts/clean.js",
@@ -64,8 +64,8 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "lucide-react": "^0.309.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "react-intl": "^6.6.2",
     "react-router-dom": "^6.21.3",
     "tailwind-merge": "^2.2.0",
@@ -76,16 +76,16 @@
     "@tailwindcss/vite": "^4.2.1",
     "@tanstack/eslint-plugin-query": "^5.17.7",
     "@testing-library/jest-dom": "^6.2.0",
-    "@testing-library/react": "^14.1.2",
+    "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^14.5.2",
     "@types/node": "^20.11.5",
-    "@types/react": "^18.2.48",
-    "@types/react-dom": "^18.2.18",
-    "@typescript-eslint/eslint-plugin": "^6.19.1",
-    "@typescript-eslint/parser": "^6.19.1",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.56.1",
+    "@typescript-eslint/parser": "^8.56.1",
     "@vitejs/plugin-react": "^4.2.1",
-    "@vitest/coverage-v8": "^1.2.1",
-    "@vitest/ui": "^1.2.1",
+    "@vitest/coverage-v8": "^4.0.18",
+    "@vitest/ui": "^4.0.18",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.3",
@@ -98,8 +98,8 @@
     "standard-version": "^9.5.0",
     "tailwindcss": "^4.0.0",
     "typescript": "^5.3.3",
-    "vite": "^5.0.12",
+    "vite": "^7.3.1",
     "vite-tsconfig-paths": "^4.3.1",
-    "vitest": "^1.2.1"
+    "vitest": "^4.0.18"
   }
 }

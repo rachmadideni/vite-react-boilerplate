@@ -48,7 +48,7 @@ async function setup() {
 
         // Create initial commit
         execSync('git add .', { stdio: 'inherit' })
-        execSync('git commit -m "Initial commit from vite-react-boilerplate"', {
+        execSync('git commit -m "Initial commit from viteamin"', {
           stdio: 'inherit',
         })
         console.log('✅ Created initial commit')
