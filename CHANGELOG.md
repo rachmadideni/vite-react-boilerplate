@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.4](https://github.com/rachmadideni/viteamin/compare/v0.1.3...v0.1.4) (2026-03-07)
+
+
+### 🐛 Bug Fixes
+
+* update react-intl to v7 for React 19 support ([9319286](https://github.com/rachmadideni/viteamin/commit/9319286c793aaa5c8d10c04ee66a02e38f781f19))
+
 ### [0.1.3](https://github.com/rachmadideni/viteamin/compare/v0.1.2...v0.1.3) (2026-03-07)
 
 
