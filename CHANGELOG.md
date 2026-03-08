@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.5](https://github.com/rachmadideni/viteamin/compare/v0.1.4...v0.1.5) (2026-03-08)
+
+
+### ✨ Features
+
+* integrate react-hook-form and zod for login validation ([fe128d0](https://github.com/rachmadideni/viteamin/commit/fe128d05531fb4684bc2792fc24c6b8dc6838990))
+
 ### [0.1.4](https://github.com/rachmadideni/viteamin/compare/v0.1.3...v0.1.4) (2026-03-07)
 
 
