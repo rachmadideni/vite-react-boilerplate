@@ -1,7 +1,7 @@
 import axios, { AxiosError, InternalAxiosRequestConfig } from 'axios'
 import { useAuthStore } from '@store/auth.store'
 
-const BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://api.example.com'
+const BASE_URL = import.meta.env.VITE_API_BASE_URL || '/api'
 const TIMEOUT = Number(import.meta.env.VITE_API_TIMEOUT) || 10000
 
 export const http = axios.create({

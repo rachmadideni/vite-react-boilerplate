@@ -9,35 +9,38 @@ mocks/
 ├── handlers.ts              # Main handlers export (combines all handler groups)
 ├── browser.ts               # MSW worker setup for browser environment
 ├── README.md               # This file
+├── utils/
+│   └── auth.utils.ts       # Authentication utilities (withAuth HOC)
 └── handlers/               # Handler groups organized by feature/domain
     ├── auth.handlers.ts    # Authentication endpoints
-    ├── dashboard.handlers.ts # Dashboard endpoints
-    └── users.handlers.ts   # User management endpoints
+    ├── dashboard.handlers.ts # Dashboard endpoints (protected)
+    └── users.handlers.ts   # User management endpoints (protected)
 ```
 
 ## Files
 
 - **`handlers.ts`**: Main file that combines all handler groups
 - **`browser.ts`**: Sets up the MSW worker for browser environment
+- **`utils/auth.utils.ts`**: Contains `withAuth()` higher-order resolver for protected endpoints
 - **`handlers/`**: Directory containing handler groups organized by feature/domain
 
 ## Available Mock Endpoints
 
 ### Authentication (`handlers/auth.handlers.ts`)
-- `POST /auth/login` - Login endpoint
+- `POST /api/auth/login` - Login endpoint
   - Success: `demo@example.com` / `password123`
   - Returns: `{ token, user }`
   
-- `GET /auth/me` - Get current user
+- `GET /api/auth/me` - Get current user (protected)
   - Requires: `Authorization: Bearer <token>` header
   
-- `POST /auth/logout` - Logout endpoint
+- `POST /api/auth/logout` - Logout endpoint (protected)
 
 ### Dashboard (`handlers/dashboard.handlers.ts`)
-- `GET /dashboard/stats` - Get dashboard statistics
+- `GET /api/dashboard/stats` - Get dashboard statistics (protected)
 
 ### Users (`handlers/users.handlers.ts`)
-- `GET /users?page=1&limit=10` - Get paginated users list
+- `GET /api/users?page=1&limit=10` - Get paginated users list (protected)
 
 ## How It Works
 
@@ -74,7 +77,7 @@ export const authHandlers = [
 // handlers/products.handlers.ts
 import { http, HttpResponse } from 'msw'
 
-const BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://api.example.com'
+const BASE_URL = import.meta.env.VITE_API_BASE_URL || '/api'
 
 export const productsHandlers = [
   http.get(`${BASE_URL}/products`, () => {
@@ -107,6 +110,25 @@ MSW is initialized in `src/main.tsx` and only runs in development mode:
 if (import.meta.env.MODE !== 'development') {
   return
 }
+```
+
+The API base URL is configured in `.env`:
+```
+VITE_API_BASE_URL=/api
+```
+
+## Protected Endpoints
+
+Protected endpoints use the `withAuth()` higher-order resolver from `utils/auth.utils.ts`. It checks for a valid `Authorization: Bearer <token>` header and returns 401 if missing or invalid.
+
+Usage example:
+```typescript
+import { withAuth } from '../utils/auth.utils'
+
+http.get(`${BASE_URL}/protected-resource`, withAuth(({ request }) => {
+  // This code only runs if authenticated
+  return HttpResponse.json({ data: 'secret data' })
+}))
 ```
 
 ## Testing Credentials

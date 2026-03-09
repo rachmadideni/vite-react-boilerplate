@@ -1,7 +1,7 @@
 import { http, HttpResponse } from 'msw'
 import { withAuth } from '../utils/auth.utils'
 
-const BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://api.example.com'
+const BASE_URL = import.meta.env.VITE_API_BASE_URL || '/api'
 
 export const dashboardHandlers = [
   // Get dashboard stats (protected)
