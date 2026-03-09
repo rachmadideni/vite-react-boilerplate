@@ -29,9 +29,16 @@ http.interceptors.request.use(
 http.interceptors.response.use(
   (response) => response,
   (error: AxiosError) => {
+    // Only redirect to login on 401 if we're NOT already on the login page
+    // and if it's not a login attempt itself
     if (error.response?.status === 401) {
-      useAuthStore.getState().logout()
-      window.location.href = '/login'
+      const isLoginRequest = error.config?.url?.includes('/auth/login')
+      const isOnLoginPage = window.location.pathname === '/login'
+      
+      if (!isLoginRequest && !isOnLoginPage) {
+        useAuthStore.getState().logout()
+        window.location.href = '/login'
+      }
     }
     return Promise.reject(error)
   }

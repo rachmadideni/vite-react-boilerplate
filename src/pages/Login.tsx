@@ -8,6 +8,7 @@ import { useAuthStore } from '@store/auth.store'
 import { Button } from '@components/ui/button'
 import { Input } from '@components/ui/input'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@components/ui/card'
+import { http } from '@lib/http'
 
 // Define validation schema
 const loginSchema = z.object({
@@ -47,14 +48,20 @@ export default function LoginPage() {
     setError('')
 
     try {
-      // Simulate API call — replace with real auth
-      await new Promise((r) => setTimeout(r, 800))
+      // Call the login API endpoint (intercepted by MSW)
+      const response = await http.post('/auth/login', {
+        email: data.email,
+        password: data.password,
+      })
 
-      setToken('mock-jwt-token')
-      setUser({ id: '1', name: 'John Doe', email: data.email })
+      const { token, user } = response.data
+
+      setToken(token)
+      setUser(user)
       navigate(from, { replace: true })
-    } catch (err) {
-      setError('Login failed. Please try again.')
+    } catch (err: any) {
+      const message = err.response?.data?.message || 'Login failed. Please try again.'
+      setError(message)
     } finally {
       setIsLoading(false)
     }
@@ -68,7 +75,11 @@ export default function LoginPage() {
         <CardDescription>{formatMessage({ id: 'auth.login.subtitle' })}</CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+        <form onSubmit={(e) => {
+          e.preventDefault()
+          e.stopPropagation()
+          handleSubmit(onSubmit)(e)
+        }} className="space-y-4">
           {error && (
             <div className="rounded-md bg-destructive/10 px-3 py-2 text-sm text-destructive">
               {error}
