@@ -15,7 +15,7 @@ export function setTestMode(enabled: boolean): void {
  * Test mode middleware
  * Prevents event emission during tests
  */
-export const testModeMiddleware: EventMiddleware = (event, data, next) => {
+export const testModeMiddleware: EventMiddleware = (_event, _data, next) => {
   // Check for test environment
   const isTest = import.meta.env.MODE === 'test' || isTestMode
 
