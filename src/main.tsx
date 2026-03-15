@@ -2,6 +2,14 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from '@app/App'
 import '@app/globals.css'
+import { initializeEventListeners } from '@store/event-listeners'
+import { registerDefaultMiddlewares } from '@/lib/middlewares'
+
+// Register event middlewares
+registerDefaultMiddlewares()
+
+// Initialize event listeners for store updates
+initializeEventListeners()
 
 async function enableMocking() {
   if (import.meta.env.MODE !== 'development') {

@@ -56,8 +56,13 @@ export default function LoginPage() {
 
       const { token, user } = response.data
 
+      // TODO: These manual store updates are temporary during migration.
+      // Primary updates now happen via event listeners (see src/store/event-listeners.ts).
+      // The axios interceptor emits 'auth.login.success' event which triggers store updates.
+      // Once fully tested, these manual calls can be removed as events handle store updates automatically.
       setToken(token)
       setUser(user)
+      
       navigate(from, { replace: true })
     } catch (err: any) {
       const message = err.response?.data?.message || 'Login failed. Please try again.'
