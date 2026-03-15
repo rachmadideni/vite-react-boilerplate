@@ -17,9 +17,9 @@ export function MainLayout() {
   }
 
   return (
-    <div className="flex min-h-screen bg-background">
+    <div className="flex h-screen bg-background">
       {/* Sidebar */}
-      <aside className="hidden w-64 flex-col border-r bg-card px-4 py-6 md:flex">
+      <aside className="hidden w-64 flex-col border-r bg-card px-4 py-6 md:flex sticky top-0 h-screen">
         <div className="mb-8 px-2">
           <h1 className="text-xl font-bold text-primary">⚡ MyApp</h1>
         </div>
@@ -73,8 +73,8 @@ export function MainLayout() {
       </aside>
 
       {/* Main content */}
-      <main className="flex-1 overflow-auto">
-        <div className="container mx-auto py-8">
+      <main className="flex-1 h-screen overflow-y-auto">
+        <div className="container mx-auto py-8 px-4 md:px-6">
           <Outlet />
         </div>
       </main>

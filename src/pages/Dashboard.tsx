@@ -1,9 +1,10 @@
+import http from '@lib/http'
 import { useIntl } from 'react-intl'
 import { useQuery } from '@tanstack/react-query'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@components/ui/card'
 import { LoadingSpinner } from '@components/common/LoadingSpinner'
 import { DashboardStats, messages as dashboardMessages } from '@features/dashboard-example'
-import http from '@lib/http'
+import { NotificationStream } from '@/features/dashboard-example/components/NotificationStream'
 
 interface Post {
   id: number
@@ -30,7 +31,7 @@ export default function DashboardPage() {
   if (isError) return <p className="text-destructive">{intl.formatMessage({ id: 'common.error' })}</p>
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 p-6">
       <div>
         <h1 className="text-3xl font-bold">
           {intl.formatMessage(dashboardMessages.welcomeHeader)}
@@ -42,6 +43,8 @@ export default function DashboardPage() {
 
       {/* Dashboard Statistics */}
       <DashboardStats className="mb-6" />
+
+      <NotificationStream />
 
       <div>
         <h2 className="text-2xl font-semibold mb-4">Recent Posts</h2>

@@ -20,8 +20,4 @@ export default defineMessages({
     id: `${scope}.stats.title`,
     defaultMessage: 'Statistics',
   },
-  viewDetails: {
-    id: `${scope}.viewDetails`,
-    defaultMessage: 'View Details',
-  },
 })
