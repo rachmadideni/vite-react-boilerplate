@@ -27,9 +27,6 @@ export function DashboardStats({ className }: DashboardStatsProps) {
           <p className="text-sm text-gray-600">Success Rate</p>
         </div>
       </div>
-      <button className="mt-4 px-4 py-2 bg-blue-600 text-white rounded">
-        {intl.formatMessage(messages.viewDetails)}
-      </button>
     </div>
   )
 }

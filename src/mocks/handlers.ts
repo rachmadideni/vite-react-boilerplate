@@ -1,6 +1,7 @@
 import { authHandlers } from './handlers/auth.handlers'
 import { dashboardHandlers } from './handlers/dashboard.handlers'
 import { usersHandlers } from './handlers/users.handlers'
+import { notificationsHandlers } from './handlers/notifications.handlers'
 
 /**
  * Combine all request handlers by feature/domain
@@ -11,4 +12,5 @@ export const handlers = [
   ...authHandlers,
   ...dashboardHandlers,
   ...usersHandlers,
+  ...notificationsHandlers
 ]
