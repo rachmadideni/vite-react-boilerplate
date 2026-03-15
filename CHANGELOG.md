@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.8](https://github.com/rachmadideni/viteamin/compare/v0.1.7...v0.1.8) (2026-03-15)
+
+
+### ♻️ Refactoring
+
+* update testModeMiddleware parameters to use underscores for unused variables ([da5002e](https://github.com/rachmadideni/viteamin/commit/da5002e97ad94f61f489ed04860bc94b96ec727d))
+
 ### [0.1.7](https://github.com/rachmadideni/viteamin/compare/v0.1.6...v0.1.7) (2026-03-15)
 
 ### [0.1.6](https://github.com/rachmadideni/viteamin/compare/v0.1.5...v0.1.6) (2026-03-15)
